@@ -1,0 +1,57 @@
+// Styles for the header/navbar
+@import "colors";
+
+header {
+  height: 64px;
+  background-color: $blue-500;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.header-row {
+  padding:  0px 40px;
+
+  line-height: 64px;
+  display: flex;
+
+}
+.logo-text {
+  font-size: 32px;
+  font-family: "Righteous", cursive;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: .02em;
+}
+
+
+.nav-link {
+  padding: 0 24px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 767px) {
+  #header-nav {
+    display: none;
+  }
+  .header-row {
+    padding-left: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  #show-sidebar {
+    display: none;
+  }
+}
+#show-sidebar {
+  width: 40px;
+  font-size: 32px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  height: 100%;
+}

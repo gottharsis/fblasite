@@ -1,0 +1,5 @@
+.sidebar
+  nav#sidebar-nav
+    - @links.zip @link_text do |link, text|
+      a.nav-link href=link = text.capitalize.html_safe
+    a.nav-link href="/forum" Forum

@@ -1,0 +1,86 @@
+// Tabs present on content pages
+@import "colors";
+
+#all-pages {
+  color: $grey-700;
+  text-align: center;
+  clear: both;
+}
+
+.tabs {
+  clear: both;
+  width: 50%;
+  margin: 8vh auto;
+  margin-top: 0;
+  text-align: center;
+
+  color: $grey-700;
+  @media screen and (max-width: 575px) {
+    width: 90%;
+  }
+  .tab-row {
+    height: 72px;
+    display: flex;
+    border-bottom: 1px solid $grey-300;
+    justify-content: center;
+    flex-direction: row;
+
+
+    .tab {
+      padding: 0 24px;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 2px solid rgba($blue-500, 0);
+      //reduce the padding on smaller screen (tablet)
+      @media screen and (max-width: 767px){
+        padding: 0 10px;
+      }
+      .tab-image {
+        height: 48px;
+        width: auto;
+      }
+    }
+  }
+}
+.panel {
+  min-height: 300px;
+  width: auto;
+  display: none;
+}
+@keyframes active-panel {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.panel.is-active {
+  display: block;
+  animation: active-panel 700ms 1 both;
+}
+.panel-image {
+  float: left;
+  height: 25vh;
+  margin: 2vw;
+  max-width: 100%;
+
+  @media screen and (max-width: 992px){
+    width: 90%;
+    height: auto;
+  }
+}
+
+.panel-text {
+  text-align: left;
+  overflow: hidden;
+  min-width: 40%;
+}
+@keyframes active-tab {
+  from   {border-bottom-color: rgba($blue-500, 0);}
+  to {border-bottom-color: rgba($blue-500, 1);}
+}
+.tab.is-active {
+  animation-name: active-tab;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+}
+
+
+//animation

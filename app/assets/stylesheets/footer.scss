@@ -1,0 +1,41 @@
+//This file holds the styles for the footer element
+// @author: Ayush Nene
+@import "colors";
+footer {
+  background-color: $grey-800;
+  height: 32px;
+  display: table;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .footer-row {
+    padding: 0px 40px;
+    line-height: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    ul {list-style-type: none;}
+    li {display: inline-block;}
+    .logo-text {
+      font-size: 32px;
+      font-family: "Righteous", cursive;
+      vertical-align: middle;
+      text-decoration: none;
+      color: $grey-500;
+      letter-spacing: .02em;
+    }
+    i {
+      font-size: 32px;
+      color: $grey-500;
+      margin: 5px;
+    }
+    .footer-text {
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+      color: $grey-50;
+    }
+  }
+}

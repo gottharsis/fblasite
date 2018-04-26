@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title = @title || "default title"
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto:300,400,500,700" rel="stylesheet">
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta name="viewport" content="width=device-width,height=device-height,initial-scale=1"
+    = render 'application/favicon'
+
+  body
+    .obfuscator
+    = render partial: "header"
+    = render partial: "sidebar"
+    main 
+      table.main-table
+        tr
+          td
+            div style="min-height: 100vh"
+              = yield
+        tr
+          td style="height: 96px"
+          
+            = render partial: "footer"

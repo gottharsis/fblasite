@@ -1,0 +1,25 @@
+// Styles for the sidebar which only appears on mobile versions of the site
+// @author: Ayush Nene
+@import "colors";
+.sidebar {
+  width: 30vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 0;
+  z-index: 1300;
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    color: $grey-600;
+    width: 207px;
+    line-height: 24px;
+    padding: 16px;
+    font-weight: 300;
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+//scroll down on main page arrow click
+var mainContentScroll = function () {
+  $('main').animate({scrollTop: $('.tabs-container').offset().top - 63}, 1000)
+}
+//closes resume previews on resume page
+var closeModal = function(link) {
+  $('.obfuscator').off('click').hide()
+  $(link).hide()
+}
+$(document).on('turbolinks:load', function () {
+  $(document).on('click', '#down-arrow-button', mainContentScroll);
+
+  //opens resume example as a modal
+  $(document).on('click', 'a.example-link', function(event) {
+    event.preventDefault();
+    $('.obfuscator').show();
+    $(this.hash).show();
+    $('.obfuscator').on('click', () => {
+      closeModal(this.hash)
+    })
+  })
+
+  // make content divs appear on scroll
+  $('.section').addClass("invisible")
+  $('main').on('scroll', function() {
+    $('.section').viewportChecker({
+      classToAdd: 'animated fadeInUp',
+      repeat: false,
+      classToRemove: 'invisible',
+      removeClassAfterAnimation: true
+    })
+  })
+})

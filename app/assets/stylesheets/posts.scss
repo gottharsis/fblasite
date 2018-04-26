@@ -1,0 +1,60 @@
+//styles for forum page
+@import "colors";
+.forum-content {
+    width: 70%;
+    margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+    .forum-content {
+        width: 95%;
+    }
+}
+
+.reply-form {
+    display: none;
+}
+
+.reply {
+    background-color: $grey-50;
+}
+
+.reply-form-holder {
+    background-color: $grey-300;
+}
+
+.reply-modal {
+    background: white;
+    position: fixed;
+    max-height: 80vh;
+    width: 80vw;
+    top: 10vh;
+    left: 10vw;
+    right: 10vw;
+    overflow-y: scroll;
+}
+
+.input-form {
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    max-width: 95%;
+    padding: 30px;
+
+}
+
+.card-content {
+    border-bottom: 1px solid $grey-400 
+}
+
+.message-text {
+    font-size: 20px;
+}
+.post-name {
+    font-size: 14px;
+}

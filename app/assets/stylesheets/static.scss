@@ -1,0 +1,102 @@
+//Styles for the main content pages
+
+//hero image backgrounds
+@import "colors";
+
+
+#homepage-hero {
+  //background-image: image-url("NewHero.jpg");
+  background-image: image-url("ayush_hero2.jpg")
+}
+#openings-hero {
+  background-image: image-url("JobOpeningsHero.png");
+}
+#resume-hero {
+  background-image: image-url("ResumeHero.png");
+}
+#application-hero {
+  background-image: image-url("ApplicationLetterHERO.png");
+}
+#interview-hero {
+  background-image: image-url("InterviewHero.png");
+}
+
+.content {
+  width: 60%;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+
+
+.text {
+  color: $grey-800;
+}
+
+img.right {
+  float: right;
+  
+}
+img.left {
+  float: left;
+}
+
+
+.content img {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  display: block;
+  max-width: 100%;
+  padding: 30px;
+}
+
+.text>div {
+  margin: 0 0;
+  width: 100%;
+}
+
+//resume page 
+//hide all the resume information by default
+//set the format of the sample resumes
+.sample-resume {
+  color: black;
+  font-family: "Times";
+  font-size: 20px;
+  background-color: white;
+  padding: 10px 30px;
+  width: calc(80vw - 60px);
+  height: 80vh;
+  margin: 0 auto;
+  box-shadow: 0px 0px 3px black;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  right: 10vw;
+  bottom: 10vh;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  @media screen and (max-width: 575px) {
+    width: calc(95vw - 60px);
+    left: 2.5vw;
+  }
+
+}
+.resume {
+  a {
+    text-decoration: none;
+  }
+  h3, h4{
+    font-weight: bold;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .yt-video {
+    width: 100%;
+    height: auto;
+  }
+}

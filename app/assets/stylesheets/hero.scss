@@ -1,0 +1,37 @@
+//styles for hero images found on all pages
+.main-hero-image{
+  width: 100%;
+  height: 90vh;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: table;
+}
+
+.hero-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  color: white;
+  font-size: 15vh;
+  line-height: normal;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  @media screen and (max-width: 575px) {
+    font-size: 15vw;
+  }
+
+}
+
+.other-hero-image {
+  width: 100%;
+  height: 45vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+}

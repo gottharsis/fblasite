@@ -1,0 +1,76 @@
+/! q&a forum 
+- @title = "Forum"
+.round-button.fab.new-post-button: i.icon.ion-android-add
+.modal.input-form
+  div
+    = form_for @post do |f|
+      h3 New Post
+      .row
+        p
+          = f.text_field :name, class: "form-field", placeholder: "Enter your name"
+          = f.label :name, "Enter your name"
+        p 
+          = f.text_field :email, class: "form-field", placeholder: "Enter your e-mail"
+          = f.label :email, "E-mail"
+      p 
+        = f.text_area :message, class: "form-field", placeholder: "Message", rows: 3, resizable: "false"
+        = f.label :message, "Message"
+      = f.submit class: 'rect-button', disabled: true
+.forum-content 
+
+  - @posts.each do |post|
+    .card.post 
+      .card-content.post-content 
+        p.message-text = post.message
+        p.post-name = post.name
+      - unless post.replies.empty?
+        .card-content.reply 
+          p: strong Latest Reply
+          p.message-text = post.replies.last.message
+          p.post-name 
+            | Reply from:
+            =< post.replies.last.name
+      .card-content.reply-form-holder
+        .reply-placeholder  Reply to post
+        .reply-form 
+          = form_for @reply do |f|
+            = f.hidden_field :post_id, value: post.id
+            .row
+              p
+                = f.text_field :name, class: "form-field", placeholder: "Enter your name"
+                = f.label :name, "Enter your name"
+              p 
+                = f.text_field :email, class: "form-field", placeholder: "Enter your e-mail"
+                = f.label :email, "E-mail"
+            p 
+              = f.text_area :message, class: "form-field", placeholder: "Message", rows: 3
+              = f.label :message, "Message"
+            = f.submit "Reply to post", class: 'rect-button'
+    .reply-modal.modal
+      .card-content
+        p.message-text = post.message
+        p.post-name = post.name
+      - unless post.replies.empty?
+        - all_replies(post).each do |reply|
+          .card-content.reply
+            p.message-text = reply.message
+            p.post-name 
+              | Reply from:
+              =< reply.name
+      .card-content.reply-form-holder
+        .reply-placeholder  Reply to post
+        .reply-form 
+          = form_for @reply do |f|
+            = f.hidden_field :post_id, value: post.id
+            .row
+              p
+                = f.text_field :name, class: "form-field", placeholder: "Enter your name"
+                = f.label :name, "Enter your name"
+              p 
+                = f.text_field :email, class: "form-field", placeholder: "Enter your e-mail"
+                = f.label :email, "E-mail"
+            p 
+              = f.text_area :message, class: "form-field", placeholder: "Message", rows: 3
+              = f.label :message, "Message"
+            = f.submit "Reply to post", class: 'rect-button'
+        

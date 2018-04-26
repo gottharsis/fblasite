@@ -1,0 +1,49 @@
+- @tab_num ||= 0
+.tabs-container
+  #all-pages
+    h2: strong Don’t just get a job, get the job you deserve.
+    h3 = case @tab_num \
+    when 0 then\
+      "Begin Your Journey Below" \
+    when 1..2 then\
+      "Continue Your Journey Below" \
+    else\
+      "Complete Your Journey Below" \
+    end
+  
+  .tabs
+    .tab-row
+      - @links.each_with_index do |link, index|
+        a.tab href="##{link}-panel" class=(@tab_num == index ? "is-active" : "")
+          = image_tag "#{link}-tab.png", class: "tab-image"
+    .panel#openings-panel class=(( @tab_num == 0 ) ? "is-active" : "")
+      = image_tag "openings-panel.png", class: 'panel-image'
+      .panel-text
+        h4 Job Openings
+        p Finding job openings can be a daunting task, and finding the right job for yourself can be even harder. Follow these simple steps to find the job openings right for you.
+        a href="openings": .rect-button find job openings
+  
+    .panel#resume-panel class=(( @tab_num == 1 ) ? "is-active" : "")
+      = image_tag "resume-panel.png", class: "panel-image"
+      .panel-text
+        h4 R&eacute;sum&eacute;
+        p This is your chance to capture a potential employer’s interest. Don't get tossed aside; instead, make an impression and acquire that job.
+        a href="resume": .rect-button Create Your R&eacute;sum&eacute;
+    .panel#application-panel class=(( @tab_num == 2 ) ? "is-active" : "")
+      = image_tag "application-panel.png", class: "panel-image"
+      .panel-text
+        h4 Application
+        p Don’t get lost in the perpetual process of job applications. Stay on track and apply with ease.
+        a href="application": .rect-button Apply Now
+    .panel#interview-panel class=(( @tab_num == 3 ) ? "is-active" : "")
+      = image_tag "interview-panel.png", class: "panel-image"
+      .panel-text
+        h4 The Interview
+        p This aspect of the job application process either makes or breaks employees. Learn how to make your interview build you up.
+        a href="interview": .rect-button Prepare For Your Interview
+    .panel class=(( @tab_num == 4) ? "is-active" : "")
+      .panel-text
+        h4 Forum
+        p Your journey is now complete, but if you still have any lingering questions, continue to the forum for further clarification.
+        a href="forum": .rect-button Find Answers
+  
